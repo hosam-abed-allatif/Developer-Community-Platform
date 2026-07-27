@@ -1,5 +1,8 @@
 import HeroSection from "@/components/HeroSection";
 import Link from "next/link";
+import {DEVELOPERS} from "@/backend/developers";
+import CommunityCard from "@/components/CommunityCard";
+import DeveloperCard from "@/components/DeveloperCard";
 
 const Developers = () => {
     return (
@@ -14,6 +17,13 @@ const Developers = () => {
                       href={"/developers/top-rated"}>top rated</Link>
                 <Link className={"border hover:bg-gray-800 px-3 py-1 rounded-full"}
                       href={"/developers/new-members"}>new members</Link>
+            </div>
+            <div className={"mx-72 mt-10 grid grid-cols-3 gap-3"}>
+                {DEVELOPERS.map((developer) => (
+                    <DeveloperCard key={developer.id} id={developer.id} type={developer.type} username={developer.username}
+                                   description={developer.description} interests={developer.interests}
+                                   framework={developer.framework} pic={developer.pic}/>
+                ))}
             </div>
         </>
     )
