@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 
-const communities = () => {
+const Communities = () => {
     return (
         <HeroSection small={"communities"} h1={
             <>Built Around <br/> What You Code.</>
@@ -9,4 +9,4 @@ const communities = () => {
     )
 }
 
-export default communities;
+export default Communities;
