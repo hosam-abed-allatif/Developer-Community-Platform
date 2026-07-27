@@ -1,7 +1,10 @@
 import HeroSection from "@/components/HeroSection";
 import Link from "next/link";
+import {COMMUNITIES} from "../../backend/communities"
+import CommunityCard from "@/components/CommunityCard";
 
 const Communities = () => {
+    const communities = COMMUNITIES;
     return (
         <>
             <HeroSection small={"communities"} h1={
@@ -16,6 +19,12 @@ const Communities = () => {
                       href={"/communities/mobile-development"}>mobile</Link>
                 <Link className={"border hover:bg-gray-800 px-3 py-1 rounded-full"}
                       href={"/communities/ui-ux"}>ui-ux</Link>
+            </div>
+            <div className={"mx-72 mt-10 grid grid-cols-3 gap-3"}>
+                {communities.map((community) => (
+                    <CommunityCard key={community.slug} slug={community.slug} totalMembers={community.totalMembers}
+                                   title={community.title} description={community.description}/>
+                ))}
             </div>
         </>
     )
