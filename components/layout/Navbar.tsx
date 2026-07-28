@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 const Navbar = () => {
     const links = [
@@ -8,6 +10,7 @@ const Navbar = () => {
         {name: "Topics", url: "/topics"},
         {name: "Developers", url: "/developers"},
     ]
+    const pathname = usePathname();
 
     return (
         <header className="p-10 border-b">
@@ -16,9 +19,26 @@ const Navbar = () => {
                     Developer Community Platform
                 </Link>
                 <div className={"flex gap-x-5"}>
-                    {links.map(link => (
-                        <Link key={link.url} href={link.url}>{link.name}</Link>
-                    ))}
+                    {links.map((link) => {
+                        const isActive =
+                            link.url === "/"
+                                ? pathname === "/"
+                                : pathname.startsWith(link.url);
+
+                        return (
+                            <Link
+                                key={link.url}
+                                href={link.url}
+                                className={`uppercase transition-colors ${
+                                    isActive
+                                        ? "text-cyan-600 font-semibold"
+                                        : "hover:text-cyan-600"
+                                }`}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </div>
             </nav>
         </header>
