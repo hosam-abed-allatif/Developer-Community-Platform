@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface DeveloperProps {
     id: string;
     username: string;
@@ -13,7 +15,9 @@ const DeveloperCard = ({username, description, pic}: DeveloperProps) => {
                     {pic}
                 </div>
                 <div>
-                    <h3 className="font-semibold text-sm">@{username}</h3>
+                    <h3 className="font-semibold text-sm">
+                        <Link href={`/developers/${username}`}>@{username}</Link>
+                    </h3>
                 </div>
             </div>
             <p className="text-xs text-gray-300 mt-3">{description}</p>
