@@ -20,9 +20,8 @@ const Developers = () => {
             </div>
             <div className={"mx-72 mt-10 grid grid-cols-3 gap-3"}>
                 {DEVELOPERS.map((developer) => (
-                    <DeveloperCard key={developer.id} id={developer.id} type={developer.type} username={developer.username}
-                                   description={developer.description} interests={developer.interests}
-                                   framework={developer.framework} pic={developer.pic}/>
+                    <DeveloperCard key={developer.id} id={developer.id} username={developer.username}
+                                   description={developer.description} pic={developer.pic}/>
                 ))}
             </div>
         </>
