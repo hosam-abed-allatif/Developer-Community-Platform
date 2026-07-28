@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import {COMMUNITIES} from "@/backend/communities";
+import NotFound from "@/app/not-found";
 
 const Community = async ({params,}: {
     params: Promise<{ slug: string }>;
@@ -8,7 +9,7 @@ const Community = async ({params,}: {
 
     const community = COMMUNITIES.find((item) => item.slug === slug);
     if (!community) {
-        return;
+        return NotFound();
     }
     return (
         <>

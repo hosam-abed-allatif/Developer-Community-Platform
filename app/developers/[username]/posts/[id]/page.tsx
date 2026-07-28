@@ -1,4 +1,5 @@
 import {DEVELOPERS} from "@/backend/developers"
+import NotFound from "@/app/not-found";
 
 const PostView = async ({params,}: {
     params: Promise<{ id: string }>;
@@ -6,7 +7,7 @@ const PostView = async ({params,}: {
     const {id} = await params;
     const post = DEVELOPERS.flatMap((developer) => developer.posts).find((post) => post.id === id);
     if (!post) {
-        return;
+        return NotFound();
     }
 
     return (

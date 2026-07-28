@@ -1,5 +1,6 @@
 import {DEVELOPERS} from "@/backend/developers"
 import PostCard from "@/components/PostCard";
+import NotFound from "@/app/not-found";
 
 const Community = async ({params,}: {
     params: Promise<{ username: string }>;
@@ -7,7 +8,7 @@ const Community = async ({params,}: {
     const {username} = await params;
     const developer = DEVELOPERS.find((developer) => developer.username === username);
     if (!developer) {
-        return;
+        return NotFound();
     }
     return (
         <div className="mx-72">
