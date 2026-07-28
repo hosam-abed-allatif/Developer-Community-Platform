@@ -4,8 +4,10 @@ const PostView = async ({params,}: {
     params: Promise<{ id: string }>;
 }) => {
     const {id} = await params;
-    const post = DEVELOPERS.flatMap((developer) => developer.posts).find((post) => post.id === id)
-    ;
+    const post = DEVELOPERS.flatMap((developer) => developer.posts).find((post) => post.id === id);
+    if (!post) {
+        return;
+    }
 
     return (
         <div className="mx-72 space-y-6">

@@ -6,7 +6,9 @@ const Community = async ({params,}: {
 }) => {
     const {username} = await params;
     const developer = DEVELOPERS.find((developer) => developer.username === username);
-
+    if (!developer) {
+        return;
+    }
     return (
         <div className="mx-72">
             <div className="space-y-6">
