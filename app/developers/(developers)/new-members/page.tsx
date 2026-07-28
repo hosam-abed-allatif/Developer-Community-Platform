@@ -5,6 +5,7 @@ import DeveloperCard from "@/components/DeveloperCard";
 const NewMembers = () => {
     return (
       <>
+              <title>New Members</title>
           <HeroSection small={"New Members"} h1={
               <>Welcome to the Next <br/> Generation of Creators.</>
           }

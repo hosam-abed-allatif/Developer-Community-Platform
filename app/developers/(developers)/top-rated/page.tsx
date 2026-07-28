@@ -5,6 +5,8 @@ import DeveloperCard from "@/components/DeveloperCard";
 const TopRated = () => {
     return (
         <>
+            <title>Top Rated</title>
+
             <HeroSection small={"Top Rated"} h1={
                 <>Celebrating the Best <br/> in the Community.</>
             }

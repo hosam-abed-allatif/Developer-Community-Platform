@@ -11,6 +11,7 @@ const Community = async ({params,}: {
     }
     return (
         <div className="mx-72">
+            <title>{developer.username}</title>
             <div className="space-y-6">
                 <div className="flex items-center gap-4">
                     <div

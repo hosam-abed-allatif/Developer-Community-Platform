@@ -6,6 +6,7 @@ import CommunityCard from "@/components/CommunityCard";
 const Communities = () => {
     return (
         <>
+            <title>Communities</title>
             <HeroSection small={"communities"} h1={
                 <>Built Around <br/> What You Code.</>
             }

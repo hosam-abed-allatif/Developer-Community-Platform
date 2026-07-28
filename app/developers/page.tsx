@@ -7,6 +7,7 @@ import DeveloperCard from "@/components/DeveloperCard";
 const Developers = () => {
     return (
         <>
+            <title>Developers</title>
             <HeroSection small={"Developers"} h1={
                 <>Discover & Connect <br/> with World-Class Developers.</>
             }
