@@ -1,4 +1,5 @@
 import {DEVELOPERS} from "@/backend/developers"
+import PostCard from "@/components/PostCard";
 
 const Community = async ({params,}: {
     params: Promise<{ username: string }>;
@@ -43,6 +44,19 @@ const Community = async ({params,}: {
                         ))}
                     </div>
                 </div>
+                <div className="space-y-2">
+                    <h2 className="text-xs font-semibold uppercase">
+                        Posts
+                    </h2>
+                    <div className="grid grid-cols-3 gap-3">
+                        {developer.posts.map((post) => (
+                            <PostCard username={developer.username} id={post.id} key={post.id} title={post.title}
+                                      description={post.description}/>
+                        ))}
+                    </div>
+                </div>
+
+
             </div>
         </div>
     );
